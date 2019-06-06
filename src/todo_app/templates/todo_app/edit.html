@@ -1,0 +1,13 @@
+{% extends 'todo_app/base_todo_app.html' %}
+
+{% block content %}
+<div align="center">
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <input type="submit" value="Confirm">
+
+</form>
+</div>
+{% endblock %}
