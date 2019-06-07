@@ -5,7 +5,7 @@ from .views import edit_task
 from .views import delete_task
 from .views import to_up_task
 from .views import to_down_task
-from .views import make_done
+from .views import mark_done
 
 urlpatterns = [
     path('', home, name='home_url'),
@@ -14,5 +14,5 @@ urlpatterns = [
     path('delete/<int:task_id>/', delete_task, name='delete_task_url'),
     path('<int:task_id>/', to_up_task, name='up_task_url'),
     path('down/<int:task_id>/', to_down_task, name='down_task_url'),
-    path('done/<int:task_id>/', make_done, name='make_done_url'),
+    path('done/<int:task_id>/', mark_done, name='mark_done_url'),
 ]

@@ -21,7 +21,7 @@
         <th>Down</th>
         <th width="10%">Title</th>
         <th width="50%">Content</th>
-        
+
         <th>Update</th>
         <th>Delete</th>
     </tr>
@@ -30,9 +30,11 @@
 
     <tr>
         {% if task.is_done %}
-        <td style="color: green">Done!</td>
+        <td style="color: green" align="center">
+        <a href="{% url 'mark_done_url' task.id %}"><button class="button button-outline" style="color: green">Done! mark unDone</button></a>
+        </td>
         {% else %}
-        <td><a href="{% url 'make_done_url' task.id %}"><button class="button button-clear">make Done</button></a></td>
+        <td><a href="{% url 'mark_done_url' task.id %}"><button class="button button-clear">mark Done</button></a></td>
         {% endif %}
         <td>{{ task.id }}</td>
         <td><a href="{% url 'up_task_url' task.id %}">Up</a></td>

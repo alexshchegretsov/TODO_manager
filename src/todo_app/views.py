@@ -60,7 +60,7 @@ def to_up_task(request, task_id):
 
 
 def to_down_task(request, task_id):
-    if task_id != Task.objects.last().id:
+    if not task_id == Task.objects.last().id:
         task_we_want_to_lower_down = Task.objects.get(id=task_id)
         task_lift_up = Task.objects.get(id=task_id + 1)
         task_lift_up.id, task_we_want_to_lower_down.id = task_we_want_to_lower_down.id, task_lift_up.id
@@ -69,8 +69,8 @@ def to_down_task(request, task_id):
         return redirect('home_url')
     return redirect('home_url')
 
-def make_done(request, task_id):
+def mark_done(request, task_id):
     task_we_done = Task.objects.get(id=task_id)
-    task_we_done.is_done = True
+    task_we_done.is_done = True if not task_we_done.is_done else False
     task_we_done.save()
     return redirect('home_url')
