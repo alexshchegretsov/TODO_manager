@@ -15,26 +15,33 @@
     </div>
 </div>
 <table>
-    <tr>
+    <tr><th>is done</th>
         <th>ID</th>
         <th>Up</th>
         <th>Down</th>
         <th width="10%">Title</th>
         <th width="50%">Content</th>
-        <th>Date</th>
+        
         <th>Update</th>
         <th>Delete</th>
     </tr>
-    {% for task in data %}
-    <tr>
-        <td>{{ task.id }}</td>
 
+    {% for task in data %}
+
+    <tr>
+        {% if task.is_done %}
+        <td style="color: green">Done!</td>
+        {% else %}
+        <td><a href="{% url 'make_done_url' task.id %}"><button class="button button-clear">make Done</button></a></td>
+        {% endif %}
+        <td>{{ task.id }}</td>
         <td><a href="{% url 'up_task_url' task.id %}">Up</a></td>
         <td><a href="{% url 'down_task_url' task.id %}">Down</a></td>
-
         <td><b>{{ task.title }}</b></td>
+
         <td><i>{{ task.content }}</i></td>
-        <td>{{ task.date|date:"d.m.Y H:i:s" }}</td>
+
+
         <td><a href="{% url 'edit_task_url' task.id %}">
             <button class="button button-outline">Update</button>
         </a></td>
@@ -42,7 +49,9 @@
             <button class="button button-outline">Delete</button>
         </a></td>
     </tr>
+
     {% endfor %}
+
 </table>
 
 

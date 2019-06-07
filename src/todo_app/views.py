@@ -68,3 +68,9 @@ def to_down_task(request, task_id):
         task_lift_up.save()
         return redirect('home_url')
     return redirect('home_url')
+
+def make_done(request, task_id):
+    task_we_done = Task.objects.get(id=task_id)
+    task_we_done.is_done = True
+    task_we_done.save()
+    return redirect('home_url')

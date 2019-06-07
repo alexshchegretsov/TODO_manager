@@ -4,7 +4,8 @@ from django.db import models
 class Task(models.Model):
     title = models.CharField(max_length=125)
     content = models.CharField(max_length=300)
-    date = models.DateTimeField(auto_now_add=True)
+    # date = models.DateTimeField(auto_now_add=True)
+    is_done = models.BooleanField(default=False)
 
     # class Meta:
     #     ordering = ['id']
