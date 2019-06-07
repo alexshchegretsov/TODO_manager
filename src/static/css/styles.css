@@ -9,6 +9,15 @@
     /*margin: 20px 0;*/
 /*}*/
 
+.gradient {
+    box-shadow: 5px 3px 10px 3px #ffffff, 10px 4px 12px 3px #f8f8f8 inset;
+    /*filter: opacity(85%);*/
+    filter: hue-rotate(178deg);
+}
+
+#high {
+    }
+
 #id_title {
     width: 300px;
 }

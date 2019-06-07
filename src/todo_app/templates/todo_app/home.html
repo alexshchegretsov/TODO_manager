@@ -20,7 +20,7 @@
 
         <th width="4%"></th>
         <th width="4%"></th>
-        <th width="10%">Title</th>
+        <th>Priority</th>
         <th width="50%">Content</th>
 
         <th>Update</th>
@@ -40,9 +40,25 @@
 
         <td><a href="{% url 'up_task_url' task.id %}"><img src="/media/up.png" alt="up"></a></td>
         <td><a href="{% url 'down_task_url' task.id %}"><img src="/media/down.png" alt="down"></a></td>
-
-
-        <td><b>{{ task.title }}</b></td>
+        {% if task.priority == 'high' %}
+        <td style="background-color: limegreen" class="gradient">
+            <a href="{% url 'set_priority_high_url' task.id %}" style="font-family:'Noto Sans CJK KR Regular'">high</a><br>
+            <a href="{% url 'set_priority_medium_url' task.id %}">medium</a><br>
+            <a href="{% url 'set_priority_low_url' task.id %}">low</a>
+        </td>
+        {% elif task.priority == 'medium' %}
+        <td style="background-color: lightcoral" class="gradient">
+            <a href="{% url 'set_priority_high_url' task.id %}">high</a><br>
+            <a href="{% url 'set_priority_medium_url' task.id %}">medium</a><br>
+            <a href="{% url 'set_priority_low_url' task.id %}">low</a>
+        </td>
+        {% else %}
+        <td style="background-color:yellow" class="gradient">
+            <a href="{% url 'set_priority_high_url' task.id %}">high</a><br>
+            <a href="{% url 'set_priority_medium_url' task.id %}">medium</a><br>
+            <a href="{% url 'set_priority_low_url' task.id %}">low</a>
+        </td>
+        {% endif %}
         <td><i>{{ task.content }}</i></td>
         <td>
             <a href="{% url 'edit_task_url' task.id %}">
