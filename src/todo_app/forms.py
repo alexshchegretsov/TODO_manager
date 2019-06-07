@@ -1,15 +1,5 @@
-from django.forms import ModelForm, Textarea, TextInput, MultipleChoiceField
-from .models import Task
+from django import forms
 
 
-class TaskForm(ModelForm):
-
-    def __init__(self, *args, **kwargs):
-        super(ModelForm, self).__init__(*args, **kwargs)
-        # self.fields['title'].label = ''
-        self.fields['content'].label = ''
-
-    class Meta:
-        model = Task
-        fields = ('content',)
-        widgets = {'content': Textarea(attrs={'placeholder': 'Describe your task'})}
+class TaskForm(forms.Form):
+    content = forms.CharField(label='', widget=forms.Textarea(attrs={'placeholder': 'Describe yor task'}))
