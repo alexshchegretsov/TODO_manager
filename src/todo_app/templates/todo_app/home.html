@@ -15,10 +15,11 @@
     </div>
 </div>
 <table>
-    <tr><th>is done</th>
-        <th>ID</th>
-        <th>Up</th>
-        <th>Down</th>
+    <tr>
+        <th></th>
+
+        <th width="4%"></th>
+        <th width="4%"></th>
         <th width="10%">Title</th>
         <th width="50%">Content</th>
 
@@ -36,26 +37,27 @@
         {% else %}
         <td><a href="{% url 'mark_done_url' task.id %}"><button class="button button-clear">mark Done</button></a></td>
         {% endif %}
-        <td>{{ task.id }}</td>
-        <td><a href="{% url 'up_task_url' task.id %}">Up</a></td>
-        <td><a href="{% url 'down_task_url' task.id %}">Down</a></td>
+
+        <td><a href="{% url 'up_task_url' task.id %}"><img src="/media/up.png" alt="up"></a></td>
+        <td><a href="{% url 'down_task_url' task.id %}"><img src="/media/down.png" alt="down"></a></td>
+
+
         <td><b>{{ task.title }}</b></td>
-
         <td><i>{{ task.content }}</i></td>
-
-
-        <td><a href="{% url 'edit_task_url' task.id %}">
+        <td>
+            <a href="{% url 'edit_task_url' task.id %}">
             <button class="button button-outline">Update</button>
-        </a></td>
-        <td><a href="{% url 'delete_task_url' task.id %}">
+            </a>
+        </td>
+        <td>
+            <a href="{% url 'delete_task_url' task.id %}">
             <button class="button button-outline">Delete</button>
-        </a></td>
+            </a>
+        </td>
     </tr>
 
     {% endfor %}
-
 </table>
-
 
 {% endblock %}
 

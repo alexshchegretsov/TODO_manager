@@ -1,11 +1,11 @@
 {% extends 'todo_app/base_todo_app.html' %}
 
 {% block title %}
+    Create
 {% endblock %}
 
 {% block content%}
-<h3 align="center">New task</h3>
-
+<h2 align="center">New task</h2>
 <div align="center">
 <form action="" method="post">
     {% csrf_token %}
