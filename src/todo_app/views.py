@@ -88,7 +88,7 @@ def set_priority_high(request, task_id):
 
 def set_priority_medium(request, task_id):
     current_task_we_set_priority = get_object_or_404(Task, id=task_id)
-    current_task_we_set_priority.priority = 'medium'
+    current_task_we_set_priority.priority = 'mid'
     current_task_we_set_priority.save()
     return redirect('home_url')
 
@@ -102,7 +102,7 @@ def set_priority_low(request, task_id):
 
 def filter_by_priority(request):
     if request.method == 'POST':
-        chosen_filter = request.Post.get('filter_by_priority')
+        chosen_filter = request.POST.get('filter_by_priority')
         data = Task.objects.filter(priority=chosen_filter)
-        return render(request, 'home_url', context={'data': data})
+        return render(request, 'todo_app/home.html', context={'data': data})
     return HttpResponse('INVALID REQUEST')

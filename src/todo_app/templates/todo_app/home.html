@@ -58,15 +58,15 @@
 
         <td style="background-color: limegreen" class="gradient">
             <a href="{% url 'set_priority_high_url' task.id %}" style="font-family:'Noto Sans CJK KR Regular'">high</a> ||
-            <a href="{% url 'set_priority_medium_url' task.id %}">medium</a> ||
+            <a href="{% url 'set_priority_medium_url' task.id %}">mid</a> ||
             <a href="{% url 'set_priority_low_url' task.id %}">low</a>
         </td>
 
-        {% elif task.priority == 'medium' %}
+        {% elif task.priority == 'mid' %}
 
         <td style="background-color: lightcoral" class="gradient">
             <a href="{% url 'set_priority_high_url' task.id %}">high</a> ||
-            <a href="{% url 'set_priority_medium_url' task.id %}">medium</a> ||
+            <a href="{% url 'set_priority_medium_url' task.id %}">mid</a> ||
             <a href="{% url 'set_priority_low_url' task.id %}">low</a>
         </td>
 
@@ -74,7 +74,7 @@
 
         <td style="background-color:yellow" class="gradient">
             <a href="{% url 'set_priority_high_url' task.id %}">high</a> ||
-            <a href="{% url 'set_priority_medium_url' task.id %}">medium</a> ||
+            <a href="{% url 'set_priority_medium_url' task.id %}">mid</a> ||
             <a href="{% url 'set_priority_low_url' task.id %}">low</a>
         </td>
 
