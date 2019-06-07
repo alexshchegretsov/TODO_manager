@@ -9,6 +9,7 @@ from .views import mark_done
 from .views import set_priority_high
 from .views import set_priority_medium
 from .views import set_priority_low
+from .views import filter_by_priority
 
 urlpatterns = [
     path('', home, name='home_url'),
@@ -21,4 +22,5 @@ urlpatterns = [
     path('priority-high/<int:task_id>/', set_priority_high, name='set_priority_high_url'),
     path('priority-medium/<int:task_id>/', set_priority_medium, name='set_priority_medium_url'),
     path('priority-low/<int:task_id>/', set_priority_low, name='set_priority_low_url'),
+    path('filter/', filter_by_priority, name='filter_by_priority_url'),
 ]

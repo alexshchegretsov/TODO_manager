@@ -12,6 +12,15 @@
         <a href="{% url 'create_task_url' %}">
             <button>Create TODO</button>
         </a>
+        <form action="{% url 'filter_by_priority_url' %}" method="post">
+            {% csrf_token %}
+            <select name="filter_by_priority" id="select">
+                <option value="high">high</option>
+                <option value="mid">mid</option>
+                <option value="low">low</option>
+            </select><br>
+            <input type="submit" value="Filter tasks" class="button button-outline">
+        </form>
     </div>
 </div>
 <table>
@@ -23,43 +32,55 @@
         <th>Priority</th>
         <th width="50%">Content</th>
 
-        <th>Update</th>
-        <th>Delete</th>
+
     </tr>
 
     {% for task in data %}
 
     <tr>
+
         {% if task.is_done %}
+
         <td style="color: green" align="center">
         <a href="{% url 'mark_done_url' task.id %}"><button class="button button-outline" style="color: green">Done! mark unDone</button></a>
         </td>
+
         {% else %}
+
         <td><a href="{% url 'mark_done_url' task.id %}"><button class="button button-clear">mark Done</button></a></td>
+
         {% endif %}
 
         <td><a href="{% url 'up_task_url' task.id %}"><img src="/media/up.png" alt="up"></a></td>
         <td><a href="{% url 'down_task_url' task.id %}"><img src="/media/down.png" alt="down"></a></td>
+
         {% if task.priority == 'high' %}
+
         <td style="background-color: limegreen" class="gradient">
-            <a href="{% url 'set_priority_high_url' task.id %}" style="font-family:'Noto Sans CJK KR Regular'">high</a><br>
-            <a href="{% url 'set_priority_medium_url' task.id %}">medium</a><br>
+            <a href="{% url 'set_priority_high_url' task.id %}" style="font-family:'Noto Sans CJK KR Regular'">high</a> ||
+            <a href="{% url 'set_priority_medium_url' task.id %}">medium</a> ||
             <a href="{% url 'set_priority_low_url' task.id %}">low</a>
         </td>
+
         {% elif task.priority == 'medium' %}
+
         <td style="background-color: lightcoral" class="gradient">
-            <a href="{% url 'set_priority_high_url' task.id %}">high</a><br>
-            <a href="{% url 'set_priority_medium_url' task.id %}">medium</a><br>
+            <a href="{% url 'set_priority_high_url' task.id %}">high</a> ||
+            <a href="{% url 'set_priority_medium_url' task.id %}">medium</a> ||
             <a href="{% url 'set_priority_low_url' task.id %}">low</a>
         </td>
+
         {% else %}
+
         <td style="background-color:yellow" class="gradient">
-            <a href="{% url 'set_priority_high_url' task.id %}">high</a><br>
-            <a href="{% url 'set_priority_medium_url' task.id %}">medium</a><br>
+            <a href="{% url 'set_priority_high_url' task.id %}">high</a> ||
+            <a href="{% url 'set_priority_medium_url' task.id %}">medium</a> ||
             <a href="{% url 'set_priority_low_url' task.id %}">low</a>
         </td>
+
         {% endif %}
-        <td><i>{{ task.content }}</i></td>
+
+        <td><b><i>{{ task.content }}</i></b></td>
         <td>
             <a href="{% url 'edit_task_url' task.id %}">
             <button class="button button-outline">Update</button>
@@ -73,7 +94,9 @@
     </tr>
 
     {% endfor %}
+
 </table>
+
 
 {% endblock %}
 

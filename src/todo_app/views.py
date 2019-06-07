@@ -99,14 +99,10 @@ def set_priority_low(request, task_id):
     current_task_we_set_priority.save()
     return redirect('home_url')
 
-# def set_priority(request, task_id):
-#     if request.method == 'POST':
-#         chosen_priority = request.POST.get('priority_choice')
-#         print(chosen_priority)
-#         task_we_change = Task.objects.get(id=task_id)
-#         task_we_change.priority = chosen_priority
-#         task_we_change.save()
-#         print(task_we_change.priority)
-#         return redirect('home_url')
-#     else:
-#         return HttpResponse('INVALID REQUEST')
+
+def filter_by_priority(request):
+    if request.method == 'POST':
+        chosen_filter = request.Post.get('filter_by_priority')
+        data = Task.objects.filter(priority=chosen_filter)
+        return render(request, 'home_url', context={'data': data})
+    return HttpResponse('INVALID REQUEST')

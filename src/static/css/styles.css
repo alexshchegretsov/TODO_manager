@@ -1,22 +1,21 @@
 /*body { background-color: #c4dce8}*/
 
 /*.align-items-center {*/
-    /*text-align: center;*/
-    /*padding: 230px;*/
+/*text-align: center;*/
+/*padding: 230px;*/
 /*}*/
 
 /*.align-items-center a {*/
-    /*margin: 20px 0;*/
+/*margin: 20px 0;*/
 /*}*/
 
 .gradient {
+    width: 15%;
     box-shadow: 5px 3px 10px 3px #ffffff, 10px 4px 12px 3px #f8f8f8 inset;
-    /*filter: opacity(85%);*/
     filter: hue-rotate(178deg);
 }
 
-#high {
-    }
+#select {width: 150px}
 
 #id_title {
     width: 300px;
