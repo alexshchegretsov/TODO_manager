@@ -4,8 +4,5 @@ from .edit_task_controller import edit_task
 from .filter_by_priority_controller import filter_by_priority
 from .home_controller import home
 from .mark_done_controller import mark_done
-from .priority_controller import set_priority_high
-from .priority_controller import set_priority_medium
-from .priority_controller import set_priority_low
 from .to_down_task_controller import to_down_task
 from .to_up_task_controller import to_up_task
