@@ -11,8 +11,11 @@ def create_task(request):
     elif request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
+            last_id = Task.objects.last().id
             data = form.cleaned_data
             Task.objects.create(**data)
+            currently_created_task = Task.objects.last()
+            currently_created_task.update_id(last_id + 1)
             return redirect('home_url')
         else:
             errors = form.errors

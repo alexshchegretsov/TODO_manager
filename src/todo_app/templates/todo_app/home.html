@@ -19,7 +19,7 @@
                 <option value="mid">mid</option>
                 <option value="low">low</option>
             </select><br>
-            <input type="submit" value="Filter tasks" class="button button-outline">
+            <input type="submit" value="Filter todos" class="button button-outline">
         </form>
     </div>
 </div>
@@ -29,8 +29,9 @@
 
         <th width="4%"></th>
         <th width="4%"></th>
-        <th>Priority</th>
-        <th width="50%">Content</th>
+        <th></th>
+
+        <th width="50%"></th>
 
 
     </tr>
@@ -56,31 +57,19 @@
 
         {% if task.priority == 'high' %}
 
-        <td style="background-color: limegreen" class="gradient">
-            <a href="{% url 'set_priority_high_url' task.id %}" style="font-family:'Noto Sans CJK KR Regular'">high</a> ||
-            <a href="{% url 'set_priority_medium_url' task.id %}">mid</a> ||
-            <a href="{% url 'set_priority_low_url' task.id %}">low</a>
-        </td>
+        <td style="background-color: limegreen" class="gradient"></td>
 
         {% elif task.priority == 'mid' %}
 
-        <td style="background-color: lightcoral" class="gradient">
-            <a href="{% url 'set_priority_high_url' task.id %}">high</a> ||
-            <a href="{% url 'set_priority_medium_url' task.id %}">mid</a> ||
-            <a href="{% url 'set_priority_low_url' task.id %}">low</a>
-        </td>
+        <td style="background-color: lightcoral" class="gradient"></td>
 
         {% else %}
 
-        <td style="background-color:yellow" class="gradient">
-            <a href="{% url 'set_priority_high_url' task.id %}">high</a> ||
-            <a href="{% url 'set_priority_medium_url' task.id %}">mid</a> ||
-            <a href="{% url 'set_priority_low_url' task.id %}">low</a>
-        </td>
+        <td style="background-color:yellow" class="gradient"></td>
 
         {% endif %}
 
-        <td><b><i>{{ task.content }}</i></b></td>
+        <td><b>{{ task.content }}</b></td>
         <td>
             <a href="{% url 'edit_task_url' task.id %}">
             <button class="button button-outline">Update</button>
