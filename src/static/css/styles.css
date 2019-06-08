@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
 
 body {
+    background-image: url("../../media/back.jpg");
     font-family: 'Indie Flower', cursive;
-    font-size: large;
+    font-size: x-large;
 
 }
 
 .gradient {
     width: 5%;
-    box-shadow: 5px 3px 10px 3px #ffffff, 10px 4px 12px 3px #f8f8f8 inset;
+    box-shadow: 2px 1px 5px 4px #ffffff, 4px 4px 12px 3px #f8f8f8 inset;
     filter: hue-rotate(178deg);
 }
 
