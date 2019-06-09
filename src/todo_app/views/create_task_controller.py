@@ -11,7 +11,7 @@ def create_task(request):
     elif request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
-            last_id = Task.objects.last().id
+            last_id = Task.objects.last().id if Task.objects.last() else 1
             data = form.cleaned_data
             Task.objects.create(**data)
             currently_created_task = Task.objects.last()
