@@ -29,8 +29,10 @@
       $ pip3 install -r requirements.txt
 </pre>
 <p>Move to /src/ directory and run server:</p>
+<pre>
       $ cd src/
       $ ./manage.py runserver
+</pre>
 <p>Open your browser in a new window and go to localhost, for this you need to enter in the input line:</p>
 <pre>
       http://127.0.0.1:8000/
