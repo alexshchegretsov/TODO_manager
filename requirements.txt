@@ -1,6 +1,5 @@
 appdirs==1.4.3
 attrs==19.1.0
-black==19.3b0
 blessings==1.7
 bpython==0.18
 certifi==2019.3.9
@@ -10,7 +9,6 @@ curtsies==0.3.0
 Django==2.2.2
 django-extensions==2.1.7
 entrypoints==0.3
-flake8==3.7.7
 greenlet==0.4.15
 idna==2.8
 mccabe==0.6.1
