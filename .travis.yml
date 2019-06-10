@@ -2,9 +2,6 @@ dist: xenial   # required for Python >= 3.7
 language: python
 
 python:
-  - 2.7
-  - 3.5
-  - 3.6
   - 3.7
 services:
   - docker
@@ -14,7 +11,3 @@ before_script: pip3 install docker-compose
 script:
   - docker-compose run src sh -c "./manage.py test && flake8"
 
-sudo: false
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
