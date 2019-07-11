@@ -41,7 +41,7 @@
 <h2>Built with</h2>
 <ul>
   <li><a href="https://www.djangoproject.com/">Django</a> - The web framework used</li>
-  <li><a href="https://mdbootstrap.com/">MDBootstrap</a> - Material Design for Bootstrap</li>
+  <li><a href="https://milligram.io/">Milligram</a> - A minimalist CSS framework</li>
 </ul>
 <h2>License</h2>
 <p>MIT &copy; <a href="https://github.com/alexshchegretsov">Alex Shchegretsov</a></p>
