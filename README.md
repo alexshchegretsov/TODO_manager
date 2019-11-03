@@ -5,39 +5,30 @@
 <h2>Demo</h2>
   <img src="images/demo.png">
 <h2>Getting started</h2>
+
+<h2>How to run</h2>
 <p>Clone the source locally:</p>
 <pre> 
       $ git clone https://github.com/alexshchegretsov/TODO_manager.git
       $ cd TODO_manager
 </pre>
-<p>Update package list and install pip for Python 3:</p>
+
+<p>Run containers with `docker-compose` tool:</p>
 <pre>
-      $ sudo apt update
-      $ sudo apt install python3-pip
+      $ docker-compose up -d
 </pre>
-<p>Once the installation is complete, verify the installation by checking the pip version:</p>
+<p>Initialize postgres and collect staticfiles:</p>
 <pre>
-      $ pip3 --version
+      $ docker-compose run --rm web ./manage.py migrate
+      $ docker-compose run --rm web ./manage.py collectstatic    (type "yes")
 </pre>
-<p>You are still at /TODO_manager/ directory, create and run virtual environment:</p>
-<pre>
-      $ virtualenv -p python3.7 .venv
-      $ source .venv/bin/activate
-</pre>
-<h4>Install all dependencies from requirements.txt:</h4>
-<pre>
-      $ pip3 install -r requirements.txt
-</pre>
-<p>Move to /src/ directory, initialize data base and run server:</p>
-<pre>
-      $ cd src/
-      $ ./manage.py migrate
-      $ ./manage.py runserver
-</pre>
-<p>Open your browser in a new window and go to localhost, for this you need to enter in the input line:</p>
+
+
+<p>Open your browser in a new window and go to localhost on 8000 port:</p>
 <pre>
       http://127.0.0.1:8000/
 </pre>
+
 <h2>Built with</h2>
 <ul>
   <li><a href="https://www.djangoproject.com/">Django</a> - The web framework used</li>
