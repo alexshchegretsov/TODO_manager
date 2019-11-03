@@ -35,4 +35,4 @@
   <li><a href="https://milligram.io/">Milligram</a> - A minimalist CSS framework</li>
 </ul>
 <h2>License</h2>
-<p>MIT &copy; <a href="https://github.com/alexshchegretsov">Alex Shchegretsov</a></p>
+<p>FREE &copy; <a href="https://github.com/alexshchegretsov">Alex Shchegretsov</a></p>
