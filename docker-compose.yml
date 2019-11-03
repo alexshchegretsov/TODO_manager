@@ -3,11 +3,8 @@ version: "3"
 services:
   web:
     build: .
-    ports:
-      - 8888:8000
     container_name: django
     command: gunicorn -c gunicorn.py todo_engine.wsgi
-
     environment:
       DATABASE_URL: postgres://user:user_passw@db/user_db
     volumes:
